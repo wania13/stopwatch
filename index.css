@@ -1,5 +1,8 @@
 h1{
     display: inline-block;
+    padding: 20px;
+    margin: 3px;
+    font-size: 40px;
 }
 
 
@@ -12,4 +15,30 @@ body{
 #music{
     opacity: 0;
     display: block;
+}
+
+
+.para{
+    color: turquoise;
+}
+
+.mainhead{
+    font-size: 50px;
+}
+
+#mybutton{
+    width: 200px;
+    height: 40px;
+}
+
+#fixed{
+    width: 70px;
+    height: 20px;
+    margin: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+.instruct{
+    border:2px solid lightseagreen;
 }

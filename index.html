@@ -9,18 +9,24 @@
 </head>
 
 <body>
+
+    <div>
+        <h2 class="mainhead">STOP WATCH</h2>
+        <div class="instruct">
+        <p class="para">Space bar ---- (start/pause)</p>
+        <p class="para">Enter Key ---- (stop)</p>
+        <p class="para">You can also set fixed timer</p>
+        </div>
+    </div>
+    
+
     <h1 id="min">0</h1>
     <h1 id="sec">0</h1>
     <h1 id="msec">0</h1>
     <br>
-    <button onclick="settimer()" id="mybutton">Set Timer</button>
+    <button onclick="settimer()" id="mybutton">Set Fix Timer</button>
+    <br>
     <input type="text" id="fixed">
-
-
-    <!-- <button onclick="start()">Start</button>
-    <button onclick="stop()">Pause</button>
-    <button onclick="reset()">Reset</button> -->
-
 
     <audio controls id="music">
         <source src="buzzer.mp3" type="audio/mpeg">
