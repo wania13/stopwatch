@@ -41,8 +41,11 @@ body{
 
 .instruct{
     border:2px solid lightseagreen;
+<<<<<<< HEAD
 }
 
 #startbut , #stopbut , #resetbut{
     margin: 5px;;
+=======
+>>>>>>> 47260c9... finalized
 }
