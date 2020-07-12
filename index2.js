@@ -18,6 +18,10 @@ var sech=document.getElementById("sec")
 var minh=document.getElementById("min")
 var setting=document.getElementById("mybutton")
 
+var startbut=document.getElementById("startbut")
+var stopbut=document.getElementById("stopbut")
+var resetbut=document.getElementById("resetbut")
+
 var timervalue=document.getElementById('fixed')
 
 var myMusic= document.getElementById("music");
@@ -49,10 +53,13 @@ function timer(){
 
 function start(){
     interval= setInterval(timer,10)
+    startbut.disabled=true
+   
 }
 
 function stop(){
     clearInterval(interval)
+    startbut.disabled=false
 }
  
 function reset(){
@@ -63,7 +70,7 @@ function reset(){
     minh.innerHTML=min
     sech.innerHTML=sec
     msech.innerHTML=msec
-
+    startbut.disabled=false
 } 
 
 
@@ -131,6 +138,9 @@ function fixedtimer(){
             msec =0 
             auto=false
             setting.disabled=false
+            startbut.disabled=false
+            stopbut.disabled=false
+            resetbut.disabled=false
             myMusic.play();
             
       } 
@@ -152,10 +162,14 @@ function settimer(){
     reset()
     auto=true
     setting.disabled=true
+    startbut.disabled=true
+    stopbut.disabled=true
+    resetbut.disabled=true
     mystop=parseInt(timervalue.value)
     function fixedtimerfun(){ finterval= setInterval(fixedtimer,10)}
     if (!isNaN(mystop)){
         setTimeout(fixedtimerfun,mystop)
     }
+
 }
 
