@@ -2,6 +2,7 @@ var min =0
 var sec =0 
 var msec =0 
 var interval
+var mystop
 
 var msech=document.getElementById("msec")
 var sech=document.getElementById("sec")
@@ -16,20 +17,26 @@ function timer(){
     msec++
     msech.innerHTML=msec
 
-
-    if (msec>=100){
+    
+    if (msec>99){
         msec=0
         sec++
         sech.innerHTML=sec
+        msech.innerHTML=msec
+
+        if (sec==mystop){
+            clearInterval(interval) 
+        } 
+    
     }
 
-    if (sec>=60){
+    if (sec>59){
         sec=0
         min++
         minh.innerHTML=min
+        sech.innerHTML=msec
     }
 
-    console.log(sec)
 }
 
 
@@ -49,50 +56,48 @@ function reset(){
     minh.innerHTML=min
     sech.innerHTML=sec
     msech.innerHTML=msec
+
 } 
 
-var pause=false
-var auto=false
 
 document.addEventListener('keyup', event => {
-    
-    if (auto==false){
-        if (event.code === 'Space') {
         
-            if (msec==0)
-            {start()}
-    
-            else if (msec!=0 && pause==true)
-            {   start()
-                pause=false}
-    
-    
-            else
-            {   stop()
-                pause=true
+        
+            if (event.code === 'Space') {
+            
+                if (msec==0)
+                {start()}
+        
+                else if (msec!=0 && pause==true)
+                {   start()
+                    pause=false}
+        
+        
+                else
+                {   stop()
+                    pause=true
+                }
             }
-        }
+        
+            else if (event.code=='Enter')
+            {   reset()
+                pause=false
+        
+            }
     
-        else if (event.code=='Enter' )
-        {   reset()
-            pause=false
-    
-        }
-    }
-
-    else if (auto==true){
-
-    }
-   
 })
-
 
 
 
 function settimer(){
 
-    var mystop=parseInt(timervalue.value)
-    start()
+        reset()
+        mystop=parseInt(timervalue.value)
+        function fixedtimerfun(){ interval= setInterval(timer,10)}
 
-    
+        if (!isNaN(mystop)){
+            setTimeout(fixedtimerfun,mystop)
+        }
+        
+        
 }

@@ -13,7 +13,7 @@
     <h1 id="sec">0</h1>
     <h1 id="msec">0</h1>
     <br>
-    <button onclick="settimer()">Set Timer</button>
+    <button onclick="settimer()" id="mybutton">Set Timer</button>
     <input type="text" id="fixed">
 
 
@@ -25,24 +25,10 @@
     <audio controls id="music">
         <source src="buzzer.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
-        </audio>
+    </audio>
         
-        
-        <button onclick="play()" type="button">Play </button>
-        <button onclick="pause()" type="button">Pause</button>
-        
-        <script>
-        var myMusic= document.getElementById("music");
-        function play() {
-        myMusic.play();
-        }
-        
-        function pause() {
-        myMusic.pause();
-        }
-        </script>
 
-    <script src="index.js"></script>
+    <script src="index2.js"></script>
 </body>
 
 </html>
