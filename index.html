@@ -14,15 +14,18 @@
         <h2 class="mainhead">STOP WATCH</h2>
         <div class="instruct">
         <p class="para">Space bar ---- (start/pause)</p>
-        <p class="para">Enter Key ---- (stop)</p>
+        <p class="para">Enter Key ---- (reset)</p>
 
-        <p class="para">You can also set fixed timer in <bold>seconds</bold></p>
+        <p class="para">You can also set fixed timer in <bold>seconds</bold></p> 
+         <p>Press "Set Fix Timer" button again to start timer once you entered the number</p>
         </div>
     </div>
     
 
     <h1 id="min">0</h1>
+    <h1 >:</h1>
     <h1 id="sec">0</h1>
+    <h1 >:</h1>
     <h1 id="msec">0</h1>
     <div>
         <button onclick="start()" id="startbut">Start</button>
@@ -33,7 +36,7 @@
     <button onclick="settimer()" id="mybutton">Set Fix Timer</button>
     <br>
 
-    <input type="text" id="fixed">
+    <input type="text" id="fixed" placeholder="enter value in seconds e.g: 3">
 
     <audio controls id="music">
         <source src="buzzer.mp3" type="audio/mpeg">

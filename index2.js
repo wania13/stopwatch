@@ -160,16 +160,18 @@ function fixedtimer(){
 function settimer(){
 
     reset()
+    document.getElementById("fixed").style.visibility='visible'
     auto=true
-    setting.disabled=true
-    startbut.disabled=true
-    stopbut.disabled=true
-    resetbut.disabled=true
     mystop=parseInt(timervalue.value)
     function fixedtimerfun(){ finterval= setInterval(fixedtimer,10)}
     if (!isNaN(mystop)){
         setTimeout(fixedtimerfun,mystop)
+        setting.disabled=true
+        startbut.disabled=true
+        stopbut.disabled=true
+        resetbut.disabled=true
     }
+
 
 }
 
