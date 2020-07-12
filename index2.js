@@ -54,12 +54,14 @@ function timer(){
 function start(){
     interval= setInterval(timer,10)
     startbut.disabled=true
+    stopbut.disabled=false
    
 }
 
 function stop(){
     clearInterval(interval)
     startbut.disabled=false
+    stopbut.disabled=true
 }
  
 function reset(){
@@ -71,6 +73,8 @@ function reset(){
     sech.innerHTML=sec
     msech.innerHTML=msec
     startbut.disabled=false
+    stopbut.disabled=false
+
 } 
 
 
@@ -159,12 +163,13 @@ function fixedtimer(){
 
 function settimer(){
 
-    reset()
-    document.getElementById("fixed").style.visibility='visible'
-    auto=true
-    mystop=parseInt(timervalue.value)
-    function fixedtimerfun(){ finterval= setInterval(fixedtimer,10)}
+    document.getElementById("fixed").style.visibility='visible'    
+    mystop=parseInt(timervalue.value) 
+
     if (!isNaN(mystop)){
+        reset()
+        auto=true
+        function fixedtimerfun(){ finterval= setInterval(fixedtimer,10)}
         setTimeout(fixedtimerfun,mystop)
         setting.disabled=true
         startbut.disabled=true
